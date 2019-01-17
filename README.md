@@ -1,0 +1,1 @@
+This is congiguration for server.
