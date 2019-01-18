@@ -1,0 +1,26 @@
+server:
+ port: 8082    #default port where the service will be started
+eureka:         #tells about the Eureka server details and its refresh time
+ registerwithEureka: true
+ fetchRegistry: true
+ instance:
+   leaseRenewalIntervalInSeconds: 1
+   leaseExpirationDurationInSeconds: 2
+ client:
+   serviceUrl:
+     defaultZone: http://172.23.239.170:8761/eureka/
+   healthcheck:
+     enabled: true
+   lease:
+     duration: 5
+spring:
+ cloud:
+   config:
+     uri: http://172.23.239.164:8088
+ application:
+   name: UserService   #current service name to be used by the eureka server
+ data:
+   mongodb:
+     authentication-database: admin
+     database: UserDetails
+     host: 172.23.239.171
